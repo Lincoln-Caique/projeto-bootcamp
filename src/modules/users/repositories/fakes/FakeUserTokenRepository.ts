@@ -3,9 +3,13 @@ import User from '@modules/users/infra/typeorm/entities/User';
 import IUserTokensRepository from '@modules/users/repositories/ IUsersRepository';
 import { uuid } from 'uuidv4';
 import UserToken from '../../infra/typeorm/entities/UserToken'
+import IFindAllProvidersDTO from '@modules/users/dtos/IFindAllProvidersDTO';
 
 class FakeUserTokensRepository implements IUserTokensRepository{
   findById(id: string): Promise<User | undefined> {
+    throw new Error('Method not implemented.');
+  }
+  findAllProviders(data: IFindAllProvidersDTO): Promise<User[]>{
     throw new Error('Method not implemented.');
   }
   findByEmail(email: string): Promise<User | undefined> {
